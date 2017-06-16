@@ -9,6 +9,6 @@ describe('The express app ', () => {
       .end((err, response) => {
         assert(response.body.hi === 'there');
         done();
-      });
+      }); 
   });
 });
