@@ -5,7 +5,10 @@ const routes = require('./routes/routes');
 const app = express();
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://mongo/muber');
+if (process.env.NODE_ENV !== 'test') {
+  mongoose.connect('mongodb://mongo/muber');
+}
+
 
 app.use(bodyParser.json());
 routes(app);
